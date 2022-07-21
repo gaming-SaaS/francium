@@ -1,6 +1,9 @@
 
-import { bootstrap } from '@gaming-saas/nest-plus';
-import { version, name } from "../package.json";
-import { AppModule } from "./app.module";
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
 
-bootstrap(name, version.split('.')[0], AppModule);
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  await app.listen(3000);
+}
+bootstrap();

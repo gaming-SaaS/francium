@@ -1,0 +1,30 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Datum {
+  """Example field (placeholder)"""
+  id: Int!
+}
+
+type Query {
+  data: [Datum!]!
+  datum(id: Int!): Datum!
+}
+
+type Mutation {
+  createDatum(createDatumInput: CreateDatumInput!): Datum!
+  updateDatum(updateDatumInput: UpdateDatumInput!): Datum!
+  removeDatum(id: Int!): Datum!
+}
+
+input CreateDatumInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateDatumInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
