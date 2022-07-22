@@ -10,6 +10,9 @@ type Datum {
 type User {
   id: Int!
   username: String!
+  fullname: String!
+  secret_key: String!
+  uuid: String!
 }
 
 type Query {
@@ -40,12 +43,14 @@ input UpdateDatumInput {
 }
 
 input CreateUserInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  username: String!
+  fullname: String!
+  secret_key: String!
 }
 
 input UpdateUserInput {
-  """Example field (placeholder)"""
-  exampleField: Int
+  username: String
+  fullname: String
+  secret_key: String
   id: Int!
 }
