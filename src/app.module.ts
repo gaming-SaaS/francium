@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { DataModule } from './data/data.module';
+import { UsersModule } from './users/users.module';
+import { DatabaseModule } from './database/database.module';
 
 @Module({
   imports: [
@@ -9,7 +11,9 @@ import { DataModule } from './data/data.module';
       driver: ApolloDriver,
       autoSchemaFile: './src/schema.gql',
     }),
-    DataModule],
+    DatabaseModule,
+    DataModule,
+    UsersModule],
   controllers: [],
   providers: [],
 })

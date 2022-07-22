@@ -7,15 +7,28 @@ type Datum {
   id: Int!
 }
 
+type User {
+  id: Int!
+  username: String!
+  fullname: String!
+  secret_key: String!
+  uuid: String!
+}
+
 type Query {
   data: [Datum!]!
   datum(id: Int!): Datum!
+  users: [User!]!
+  user(id: Int!): User!
 }
 
 type Mutation {
   createDatum(createDatumInput: CreateDatumInput!): Datum!
   updateDatum(updateDatumInput: UpdateDatumInput!): Datum!
   removeDatum(id: Int!): Datum!
+  createUser(createUserInput: CreateUserInput!): User!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+  removeUser(id: Int!): User!
 }
 
 input CreateDatumInput {
@@ -26,5 +39,18 @@ input CreateDatumInput {
 input UpdateDatumInput {
   """Example field (placeholder)"""
   exampleField: Int
+  id: Int!
+}
+
+input CreateUserInput {
+  username: String!
+  fullname: String!
+  secret_key: String!
+}
+
+input UpdateUserInput {
+  username: String
+  fullname: String
+  secret_key: String
   id: Int!
 }

@@ -1,17 +1,21 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Inject } from '@nestjs/common';
 import { CreateDatumInput } from './dto/create-datum.input';
 import { UpdateDatumInput } from './dto/update-datum.input';
 import { Datum } from './entities/datum.entity';
 
 @Injectable()
 export class DataService {
+  constructor() {
+  }
+
   create(createDatumInput: CreateDatumInput) {
     return 'This action adds a new datum';
   }
 
-  findAll() {
-    const a =new Datum()
-    a.id=88
+  async findAll() {
+
+    const a = new Datum()
+    a.id = 88
     return [a];
   }
 
