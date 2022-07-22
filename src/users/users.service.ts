@@ -1,4 +1,4 @@
-import { Injectable, Inject } from '@nestjs/common';
+import { Injectable, Inject, NotImplementedException } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { REPOSITORY } from '../constants';
 import { CreateUserInput } from './dto/create-user.input';
@@ -29,8 +29,6 @@ export class UsersService {
 
   async findAll() {
     const data = await this.userRepository.find();
-
-
     return data;
   }
 
@@ -40,16 +38,14 @@ export class UsersService {
         id: id,
       },
     });
-
-
     return data[0];
   }
 
   update(id: number, updateUserInput: UpdateUserInput) {
-    return `This action updates a #${id} user`;
+    throw new NotImplementedException();
   }
 
   remove(id: number) {
-    return `This action removes a #${id} user`;
+    throw new NotImplementedException();
   }
 }
