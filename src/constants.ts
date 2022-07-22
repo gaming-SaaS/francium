@@ -3,3 +3,8 @@ export const REPOSITORY = {
 }
 
 export const DATA_SOURCE = 'DATA_SOURCE';
+
+export let PATH = {
+    LOG: ''
+  }
+  
