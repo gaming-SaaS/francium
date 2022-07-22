@@ -5,7 +5,7 @@ import { REPOSITORY, DATA_SOURCE } from '../constants';
 
 export const GroupProviders = [
     {
-        provide: REPOSITORY.USER,
+        provide: REPOSITORY.GROUP,
         useFactory: (dataSource: DataSource) => dataSource.getRepository(Group),
         inject: [DATA_SOURCE],
     },

@@ -5,6 +5,7 @@ import { DataModule } from './data/data.module';
 import { UsersModule } from './users/users.module';
 import { DatabaseModule } from './database/database.module';
 import { GroupsModule } from './groups/groups.module';
+import { GroupMembersModule } from './group-members/group-members.module';
 
 @Module({
   imports: [
@@ -15,7 +16,8 @@ import { GroupsModule } from './groups/groups.module';
     DatabaseModule,
     DataModule,
     UsersModule,
-    GroupsModule],
+    GroupsModule,
+    GroupMembersModule],
   controllers: [],
   providers: [],
 })
